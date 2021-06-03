@@ -1,0 +1,43 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/CSS/galeria.css" rel="stylesheet" />
+    <title></title>
+    <link href="~/CSS/ListaProducto.css" rel="stylesheet" />
+</head>
+@{
+    ViewBag.Title = "Lista";
+    var ListaProductos = ViewBag.ListaProductos;
+    
+
+}
+<a href="@Url.Action("Agregar")">Agregar</a>
+
+
+
+<body>
+    @foreach (var p in ListaProductos)
+
+    {
+        <div class="container">
+            <div class="iteam">
+                <img src="@p.Imagen" alt="Alternate Text"  class="iteam-img"/>
+                <div class="iteam-text">
+                    <h3>@p.Nombre</h3>
+
+                    <p class="descripcion">@p.Descripcion</p>
+                    <p class="descripcion">@p.Precio</p>
+                </div>
+
+
+            </div>
+        </div>
+    }
+
+
+
+
+</body>
+
+
+</html>
